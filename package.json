@@ -1,0 +1,12 @@
+{
+  "name": "crisp-mini-api-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local GitHub-connected API gateway with configurable proxy routes",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
