@@ -14,7 +14,7 @@ npm start
 
 Open [http://127.0.0.1:3000](http://127.0.0.1:3000). The server binds to loopback only. Gateway settings are saved in `data/config.json`.
 
-The customer-facing bookstore is available at [http://127.0.0.1:3000/bookstore.html](http://127.0.0.1:3000/bookstore.html). It loads its 12-book catalog from the server, searches, filters and sorts on the server, places demo orders (no payment), and searches Open Library through the gateway.
+The customer-facing bookstore is available at [http://127.0.0.1:3000/bookstore.html](http://127.0.0.1:3000/bookstore.html). It loads its 12-book catalog from the server, searches, filters and sorts on the server, places demo orders (no payment), and searches Open Library through the gateway. Clicking a book's cover or title opens a details view with its description, loaded from `GET /store/api/books/:id`.
 
 ## Bookstore API
 
