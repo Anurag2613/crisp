@@ -97,6 +97,21 @@ describe("catalog", () => {
     assert.ok(res.json.book.description);
     assert.equal((await request("GET", "/store/api/books/999")).status, 404);
   });
+
+  test("every catalog book can be opened by id for the details view", async () => {
+    for (const book of catalog) {
+      const res = await request("GET", `/store/api/books/${book.id}`);
+      assert.equal(res.status, 200, `book ${book.id}`);
+      assert.equal(res.json.book.title, book.title);
+      assert.ok(res.json.book.description.length > 20, `book ${book.id} needs a description`);
+    }
+  });
+
+  test("returns 404 for a non-numeric book id", async () => {
+    const res = await request("GET", "/store/api/books/abc");
+    assert.equal(res.status, 404);
+    assert.ok(res.json.error);
+  });
 });
 
 describe("orders", () => {

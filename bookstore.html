@@ -14,8 +14,10 @@
     .book-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 19px}.book-card{min-width:0}.cover-wrap{position:relative;background:#f1eee8;aspect-ratio:3/4.15;display:flex;justify-content:center;align-items:center;overflow:hidden}.cover{width:100%;height:100%;object-fit:cover;transition:transform .35s}.book-card:hover .cover{transform:scale(1.035)}.tag{position:absolute;top:10px;left:10px;background:#fffdf9ed;padding:5px 8px;color:#74553a;font:9px Arial,sans-serif;letter-spacing:.3px}.book-info{padding:12px 1px 0}.book-title{font-size:15px;line-height:1.35;font-weight:600;margin:0 0 5px;color:#2d2b25}.author{color:#807b71;font:11px Arial,sans-serif;margin:0 0 9px}.book-meta{display:flex;justify-content:space-between;align-items:center;color:#8a6b39;font:10px Arial,sans-serif}.price{color:#302e28;font:13px Arial,sans-serif;font-weight:700}.card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:11px}.add-button{padding:7px 10px;border:1px solid #c9c2b6;background:transparent;color:#514b42;border-radius:3px;font:10px Arial,sans-serif}.add-button:hover{border-color:#a74d31;color:#a74d31}.empty{grid-column:1/-1;text-align:center;padding:56px 10px;color:#77736a;font:13px Arial,sans-serif}
     footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:#827d73;font:11px Arial,sans-serif}.cart-overlay{position:fixed;inset:0;background:#1a191677;z-index:8;opacity:0;visibility:hidden;transition:.2s}.cart-overlay.open{opacity:1;visibility:visible}.cart-drawer{position:fixed;right:0;top:0;height:100dvh;width:min(410px,100%);background:#fcfaf6;z-index:9;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;padding:23px}.cart-drawer.open{transform:translateX(0)}.cart-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:17px;border-bottom:1px solid var(--line)}.cart-head h2{font-size:21px;font-weight:500;margin:0}.close{border:0;background:none;font:24px Arial,sans-serif;color:#777}.cart-items{flex:1;overflow:auto}.cart-item{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-item img{width:55px;height:72px;object-fit:cover}.cart-item-details{flex:1}.cart-item-title{font-size:13px;font-weight:600;margin:2px 0 5px}.cart-item-author{font:10px Arial,sans-serif;color:#827d73}.cart-item-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:11px;font:11px Arial,sans-serif}.quantity{display:flex;align-items:center;gap:9px}.quantity button{border:1px solid var(--line);background:white;width:22px;height:22px;border-radius:3px}.cart-empty{margin:auto;text-align:center;color:#817c72;font:13px Arial,sans-serif;line-height:1.6}.cart-footer{border-top:1px solid var(--line);padding-top:17px}.cart-total{display:flex;justify-content:space-between;margin-bottom:14px;font:13px Arial,sans-serif}.cart-footer .primary-button{width:100%}.toast{position:fixed;left:50%;bottom:22px;z-index:12;transform:translate(-50%,10px);background:#37392f;color:#fff;padding:11px 16px;font:11px Arial,sans-serif;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
     .discover{border-top:1px solid var(--line);padding-top:54px}.discover-form{display:flex;gap:9px;margin:18px 0 20px;flex-wrap:wrap}.discover-form .search{width:min(420px,100%);padding-left:12px}.status-line{font:12px Arial,sans-serif;color:#77736a;margin:0 0 16px;min-height:16px}.status-line.error{color:#a3402a}.retry{margin-left:8px;border:1px solid #c9c2b6;background:transparent;border-radius:3px;padding:4px 9px;font:11px Arial,sans-serif;color:#514b42}.ext-link{color:#a74d31;font:10px Arial,sans-serif;text-decoration:none}.ext-link:hover{text-decoration:underline}.order-done{margin:auto;text-align:center;font:13px Arial,sans-serif;color:#57544c;line-height:1.7;padding:20px}.order-done strong{display:block;font:20px Georgia,serif;color:#2d2b25;margin-bottom:6px}.order-id{display:inline-block;background:var(--pale);padding:3px 9px;border-radius:3px;font-family:Consolas,monospace;color:#74553a}.primary-button:disabled{opacity:.6;cursor:wait}
+    .cover-button{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer}.cover-button:focus-visible,.title-button:focus-visible{outline:2px solid #a74d31;outline-offset:2px}.title-button{padding:0;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}.title-button:hover{color:#a74d31}
+    .details-overlay{position:fixed;inset:0;background:#1a191677;z-index:10;opacity:0;visibility:hidden;transition:.2s}.details-overlay.open{opacity:1;visibility:visible}.details{position:fixed;left:50%;top:50%;z-index:11;width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 48px);overflow:auto;background:#fcfaf6;border-radius:6px;box-shadow:0 18px 50px #2a221a40;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:.2s}.details.open{transform:translate(-50%,-50%);opacity:1;visibility:visible}.details-close{position:absolute;right:12px;top:8px;z-index:1}.details-body{display:grid;grid-template-columns:240px 1fr;gap:28px;padding:30px}.details-cover{width:100%;aspect-ratio:3/4.15;object-fit:cover;background:#f1eee8;border-radius:3px}.details h2{font-size:27px;line-height:1.2;font-weight:500;letter-spacing:-.4px;margin:10px 0 6px}.details-author{font:13px Arial,sans-serif;color:#77736a;margin:0 0 14px}.details-meta{display:flex;flex-wrap:wrap;gap:8px 16px;font:12px Arial,sans-serif;color:#8a6b39;margin-bottom:16px}.details-description{font-size:15px;line-height:1.7;color:#4b4942;margin:0 0 22px}.details-buy{display:flex;align-items:center;gap:18px;border-top:1px solid var(--line);padding-top:18px}.details-price{font:20px Arial,sans-serif;font-weight:700;color:#302e28}.details-status{padding:60px 30px;text-align:center;font:13px Arial,sans-serif;color:#77736a}
     @media(max-width:850px){.hero{gap:20px;padding-top:45px}.hero-art:before{width:220px;height:220px}.hero-book{width:155px;height:225px}.book-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:600px){header{height:64px;padding:0 17px}.header-link{display:none}.hero{grid-template-columns:1fr;padding:40px 20px 34px;gap:10px}.hero h1{font-size:43px}.hero-copy{font-size:14px}.hero-art{min-height:230px}.hero-art:before{width:200px;height:200px}.hero-book{height:205px;width:143px}.floating-note{bottom:1px}.catalog{padding:15px 17px 55px}.catalog-top{align-items:flex-start;flex-direction:column}.catalog h2{font-size:26px}.tools{width:100%}.search-wrap{flex:1}.search{width:100%}.sort{max-width:135px}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 13px}.book-title{font-size:13px}.cover-wrap{aspect-ratio:3/4.3}}
+    @media(max-width:600px){.details-body{grid-template-columns:1fr;padding:44px 20px 22px;gap:18px}.details-cover{max-width:200px}.details h2{font-size:23px}header{height:64px;padding:0 17px}.header-link{display:none}.hero{grid-template-columns:1fr;padding:40px 20px 34px;gap:10px}.hero h1{font-size:43px}.hero-copy{font-size:14px}.hero-art{min-height:230px}.hero-art:before{width:200px;height:200px}.hero-book{height:205px;width:143px}.floating-note{bottom:1px}.catalog{padding:15px 17px 55px}.catalog-top{align-items:flex-start;flex-direction:column}.catalog h2{font-size:26px}.tools{width:100%}.search-wrap{flex:1}.search{width:100%}.sort{max-width:135px}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 13px}.book-title{font-size:13px}.cover-wrap{aspect-ratio:3/4.3}}
   </style>
 </head>
 <body>
@@ -59,6 +61,11 @@
     <div class="cart-items" id="cart-items"></div>
     <div class="cart-footer" id="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cart-total">₹0.00</strong></div><button class="primary-button" id="checkout">Continue to checkout</button></div>
   </aside>
+  <div class="details-overlay" id="details-overlay"></div>
+  <section class="details" id="details" role="dialog" aria-modal="true" aria-labelledby="details-title" aria-hidden="true">
+    <button class="close details-close" id="close-details" aria-label="Close book details">×</button>
+    <div id="details-content"></div>
+  </section>
   <div class="toast" id="toast" role="status"></div>
   <script>
     const money=value=>`₹${Number(value).toFixed(2)}`;
@@ -99,7 +106,7 @@
     function renderFilters(){$("filters").innerHTML=categories.map(category=>`<button class="filter ${category===activeCategory?"active":""}" data-category="${escapeHTML(category)}" aria-pressed="${category===activeCategory}">${escapeHTML(category)}</button>`).join("");}
 
     function bookCard(book){
-      return `<article class="book-card"><div class="cover-wrap"><img class="cover" src="${escapeHTML(book.image)}" alt="Cover art for ${escapeHTML(book.title)}" loading="lazy" onerror="this.src='${PLACEHOLDER}'">${book.bestseller?'<span class="tag">READER FAVORITE</span>':""}</div><div class="book-info"><h3 class="book-title" title="${escapeHTML(book.description||"")}">${escapeHTML(book.title)}</h3><p class="author">by ${escapeHTML(book.author)}</p><div class="book-meta"><span>★ ${book.rating} <span style="color:#aaa59a">(${book.reviews.toLocaleString()})</span></span><span class="price">${money(book.price)}</span></div><div class="card-bottom"><span style="font:10px Arial,sans-serif;color:#89847a">${escapeHTML(book.category)}</span><button class="add-button" data-add="${book.id}">Add to bag</button></div></div></article>`;
+      return `<article class="book-card"><div class="cover-wrap"><button class="cover-button" type="button" data-details="${book.id}" aria-label="View details for ${escapeHTML(book.title)}"><img class="cover" src="${escapeHTML(book.image)}" alt="" loading="lazy" onerror="this.src='${PLACEHOLDER}'"></button>${book.bestseller?'<span class="tag">READER FAVORITE</span>':""}</div><div class="book-info"><h3 class="book-title"><button class="title-button" type="button" data-details="${book.id}">${escapeHTML(book.title)}</button></h3><p class="author">by ${escapeHTML(book.author)}</p><div class="book-meta"><span>★ ${book.rating} <span style="color:#aaa59a">(${book.reviews.toLocaleString()})</span></span><span class="price">${money(book.price)}</span></div><div class="card-bottom"><span style="font:10px Arial,sans-serif;color:#89847a">${escapeHTML(book.category)}</span><button class="add-button" data-add="${book.id}">Add to bag</button></div></div></article>`;
     }
 
     async function loadCatalog(){
@@ -174,17 +181,69 @@
       }
     }
 
+    function addToBag(id){
+      const book=catalog.get(id);
+      if(!book)return;
+      const item=cart.find(entry=>entry.id===book.id);
+      if(item)item.quantity=Math.min(item.quantity+1,20);else cart.push({id:book.id,quantity:1});
+      saveCart();
+      showToast(`${book.title} added to your bag.`);
+    }
+
+    // Book details: loaded from GET /store/api/books/:id each time a book is opened.
+    let detailsTrigger=null;
+    let detailsRequest;
+    function renderDetails(book){
+      $("details-content").innerHTML=`<div class="details-body"><img class="details-cover" src="${escapeHTML(book.image)}" alt="Cover art for ${escapeHTML(book.title)}" onerror="this.src='${PLACEHOLDER}'"><div><div class="eyebrow">${escapeHTML(book.category)}${book.bestseller?" · Reader favorite":""}</div><h2 id="details-title">${escapeHTML(book.title)}</h2><p class="details-author">by ${escapeHTML(book.author)}</p><div class="details-meta"><span>★ ${book.rating} rating</span><span>${book.reviews.toLocaleString()} reviews</span></div><p class="details-description">${escapeHTML(book.description||"No description available yet.")}</p><div class="details-buy"><span class="details-price">${money(book.price)}</span><button class="primary-button" type="button" data-add-details="${book.id}">Add to bag</button></div></div></div>`;
+    }
+    async function openDetails(id,trigger){
+      detailsTrigger=trigger||document.activeElement;
+      detailsRequest?.abort();
+      detailsRequest=new AbortController();
+      $("details-content").innerHTML='<p class="details-status" id="details-title">Loading book details…</p>';
+      $("details-overlay").classList.add("open");$("details").classList.add("open");$("details").setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
+      $("close-details").focus();
+      try{
+        const {book}=await getJSON(`/store/api/books/${encodeURIComponent(id)}`,{signal:detailsRequest.signal});
+        renderDetails(book);
+      }catch(error){
+        if(error.name==="AbortError")return;
+        $("details-content").innerHTML=`<div class="details-status"><p id="details-title">${error.status===404?"This book is no longer in the catalog.":"We couldn't load this book. Check that the Crisp server is running."}</p>${error.status===404?"":'<button class="retry" type="button" id="details-retry">Try again</button>'}</div>`;
+        $("details-retry")?.addEventListener("click",()=>openDetails(id,detailsTrigger));
+      }
+    }
+    function closeDetails(){
+      if(!$("details").classList.contains("open"))return false;
+      detailsRequest?.abort();
+      $("details-overlay").classList.remove("open");$("details").classList.remove("open");$("details").setAttribute("aria-hidden","true");
+      document.body.style.overflow="";
+      if(detailsTrigger&&document.contains(detailsTrigger))detailsTrigger.focus();
+      return true;
+    }
+    function trapFocus(event){
+      if(event.key!=="Tab"||!$("details").classList.contains("open"))return;
+      const items=[...$("details").querySelectorAll("button,[href],input,select,textarea")].filter(el=>!el.disabled&&el.offsetParent!==null);
+      if(!items.length)return;
+      const first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+
     function showToast(message){const toast=$("toast");toast.textContent=message;toast.classList.add("show");clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove("show"),2200);}
     function toggleCart(open){$("cart-overlay").classList.toggle("open",open);$("cart-drawer").classList.toggle("open",open);$("cart-drawer").setAttribute("aria-hidden",String(!open));if(open)renderCart();}
     $("filters").addEventListener("click",event=>{const button=event.target.closest("[data-category]");if(button){activeCategory=button.dataset.category;renderFilters();loadCatalog();}});
     $("search").addEventListener("input",()=>{clearTimeout(searchTimer);searchTimer=setTimeout(loadCatalog,200);});
     $("sort").addEventListener("change",loadCatalog);
-    grid.addEventListener("click",event=>{const button=event.target.closest("[data-add]");if(!button)return;const book=catalog.get(Number(button.dataset.add));if(!book)return;const item=cart.find(entry=>entry.id===book.id);if(item)item.quantity=Math.min(item.quantity+1,20);else cart.push({id:book.id,quantity:1});saveCart();showToast(`${book.title} added to your bag.`);});
+    grid.addEventListener("click",event=>{const details=event.target.closest("[data-details]");if(details){openDetails(Number(details.dataset.details),details);return;}const button=event.target.closest("[data-add]");if(button)addToBag(Number(button.dataset.add));});
+    $("details-content").addEventListener("click",event=>{const button=event.target.closest("[data-add-details]");if(button)addToBag(Number(button.dataset.addDetails));});
+    $("close-details").addEventListener("click",closeDetails);
+    $("details-overlay").addEventListener("click",closeDetails);
     $("cart-items").addEventListener("click",event=>{const button=event.target.closest("[data-quantity]");if(!button)return;const item=cart.find(entry=>entry.id===Number(button.dataset.quantity));if(!item)return;item.quantity=Math.min(item.quantity+Number(button.dataset.delta),20);if(item.quantity<1)cart=cart.filter(entry=>entry.id!==item.id);saveCart();});
     $("open-cart").addEventListener("click",()=>toggleCart(true));
     $("close-cart").addEventListener("click",()=>toggleCart(false));
     $("cart-overlay").addEventListener("click",()=>toggleCart(false));
-    document.addEventListener("keydown",event=>{if(event.key==="Escape")toggleCart(false);});
+    document.addEventListener("keydown",event=>{trapFocus(event);if(event.key==="Escape"&&!closeDetails())toggleCart(false);});
     $("checkout").addEventListener("click",checkout);
     $("discover-form").addEventListener("submit",discover);
     renderFilters();renderCart();loadCatalog();loadAllBooks().catch(()=>{});
