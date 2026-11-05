@@ -2,6 +2,7 @@ const http = require("node:http");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const { randomUUID } = require("node:crypto");
+const { createStore } = require("./store.js");
 
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PORT || 3000);
@@ -13,6 +14,13 @@ const MAX_RESPONSE_BYTES = Number(process.env.CRISP_MAX_RESPONSE_BYTES || 10 * 1
 const LOOPBACK_HOSTNAMES = new Set(["127.0.0.1", "localhost"]);
 const MAX_LOG_ENTRIES = 100;
 const METHODS = new Set(["GET", "POST", "PUT", "PATCH", "DELETE", "ALL"]);
+// Added on first start so the bookstore's "Discover more" search works out of the box.
+const DEFAULT_ENDPOINTS = [{
+  name: "Open Library search",
+  method: "GET",
+  path: "/discover",
+  upstreamUrl: "https://openlibrary.org/search.json",
+}];
 const logs = [];
 
 let config = { repository: null, endpoints: [] };
@@ -350,6 +358,12 @@ async function serve(req, res) {
     return jsonResponse(res, 421, { error: "This gateway only answers requests addressed to 127.0.0.1 or localhost." });
   }
   const url = new URL(req.url, `http://${HOST}:${port}`);
+  if (url.pathname.startsWith("/store/api/")) {
+    if (!originIsAllowed(req.headers.origin, port)) {
+      return jsonResponse(res, 403, { error: "Store requests from other sites are not allowed." });
+    }
+    return store.handle(req, res, url);
+  }
   if (url.pathname.startsWith("/api/")) {
     if (!originIsAllowed(req.headers.origin, port)) {
       return jsonResponse(res, 403, { error: "Admin requests from other sites are not allowed." });
@@ -373,6 +387,14 @@ async function serve(req, res) {
   res.end(page);
 }
 
+const store = createStore({
+  catalogFile: path.join(ROOT, "books.json"),
+  dataDir: DATA_DIR,
+  readJson,
+  jsonResponse,
+  httpError,
+});
+
 async function loadConfig() {
   config = { repository: null, endpoints: [] };
   try {
@@ -381,6 +403,8 @@ async function loadConfig() {
     if (saved.repository && typeof saved.repository.fullName === "string") config.repository = saved.repository;
   } catch (error) {
     if (error.code !== "ENOENT") throw new Error(`Could not load gateway config: ${error.message}`);
+    config.endpoints = DEFAULT_ENDPOINTS.map(endpoint => ({ ...endpoint, id: randomUUID(), createdAt: new Date().toISOString() }));
+    await saveConfig();
   }
 }
 
@@ -396,6 +420,7 @@ function createServer() {
 
 async function start(port = PORT) {
   await loadConfig();
+  await store.load();
   const server = createServer();
   await new Promise((resolve, reject) => {
     server.once("error", reject);
