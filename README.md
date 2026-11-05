@@ -39,4 +39,22 @@ The admin API is local-only:
 - `PUT /api/endpoints/:id` and `DELETE /api/endpoints/:id` update or remove a route
 - `GET /api/logs` — recent request metadata (no payloads or credentials)
 
-This is a local development MVP, not a production-hardened public gateway: it has no user authentication, TLS termination, or persistent audit log. Do not expose it to an untrusted network.
+## Local security
+
+The server binds to `127.0.0.1`, and it also defends against web pages open in your own browser:
+
+- Every request must carry a `Host` of `127.0.0.1` or `localhost` on the server's port, or it gets `421`. This blocks DNS-rebinding attacks.
+- Admin requests (`/api/*`) sent from another site's `Origin` are rejected with `403`.
+- Admin requests with a body must be `Content-Type: application/json` (otherwise `415`), so a cross-site form or `text/plain` post cannot create routes.
+
+Gateway responses are streamed and capped at 10 MB (`CRISP_MAX_RESPONSE_BYTES`). Upstream `Set-Cookie` headers are dropped. Note that `Authorization` and `X-API-Key` headers are forwarded to whatever upstream a route points at, so only add routes you trust.
+
+This is still a local development MVP, not a production-hardened public gateway: it has no user authentication, TLS termination, or persistent audit log. Do not expose it to an untrusted network.
+
+## Tests
+
+```powershell
+npm test
+```
+
+Tests use Node's built-in test runner and need no dependencies. CI runs them on Node 18, 20 and 22. Set `CRISP_DATA_DIR` to keep test or alternate config out of `data/`.
